@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { User } from './common/user';
+import { User } from '../common/user';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class AppComponent {
-  title = 'frameword_Angular';
+export class LoginComponent {
   user : User[] = [
     {
       id: 1,
