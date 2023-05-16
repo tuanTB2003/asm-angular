@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '../common/user';
-import { Product } from '../common/product';
+import { User } from '../../common/user';
+import { Product } from '../../common/product';
 
 @Component({
   selector: 'app-home',
