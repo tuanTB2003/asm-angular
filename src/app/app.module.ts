@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoryComponent } from './pages/category/category.component';
+import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
+import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CategoryComponent } from './pages/category/category.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    CategoryComponent
+    CategoryComponent,
+    LayoutAdminComponent,
+    LayoutClientComponent
     
   ],
   imports: [
