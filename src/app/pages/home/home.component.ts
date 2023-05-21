@@ -1,19 +1,51 @@
-import { Component } from '@angular/core';
-import { User } from '../../common/user';
-import { Product } from '../../common/product';
+import { Component  , OnInit} from '@angular/core';
+import { ProductServiceService } from 'src/app/API/Products/product-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  title = 'Home-page';
-  products: Product[] = [
-    { name: 'Product 1', price: 50, desc: 'Description of Product 1', brand: 'Brand 1', imgUrl: 'https://via.placeholder.com/150' }, 
-    { name: 'Product 2', price: 100, desc: 'Description of Product 2', brand: 'Brand 2', imgUrl: 'https://via.placeholder.com/150' }, 
-    { name: 'Product 3', price: 75.55, desc: 'Description of Product 3', brand: 'Brand 3', imgUrl: 'https://via.placeholder.com/150' }
-  ]
+export class HomeComponent implements OnInit{
+  // title = 'Home-page';
+  products: any[] | undefined;
+
+  constructor(private productService: ProductServiceService) { }
+
+  ngOnInit() {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productService.getProducts().subscribe(
+      products => this.products = products.datas,
+      // data => console.log(data),
+      
+      error => console.log(error)
+    );
+  }
+
+  addProduct(product: any): void {
+    this.productService.addProduct(product).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+  }
+
+  updateProduct(product: any): void {
+    this.productService.updateProduct(product).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+  }
+
+  deleteUser(productId: number): void {
+    this.productService.deleteUser(productId).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+  }
+
   public toggleDesc(event: any): void {
     event.target.parentElement.querySelector('.btn-desc').classList.toggle('d-none');
 }

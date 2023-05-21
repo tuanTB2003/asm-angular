@@ -12,6 +12,7 @@ import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.compon
 import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterAdminComponent } from './components/footer-admin/footer-admin.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
