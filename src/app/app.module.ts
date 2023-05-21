@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+// import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +17,7 @@ import { LayoutClientComponent } from './layouts/layout-client/layout-client.com
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +30,16 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutAdminComponent,
     LayoutClientComponent,
     HeaderAdminComponent,
-    FooterAdminComponent
+    FooterAdminComponent,
+    ProductDetailComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

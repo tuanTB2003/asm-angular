@@ -11,8 +11,13 @@ export class ProductServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<any> {
+  getAll(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
+  }
+
+  getDetail(id: string): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<any>(url);
   }
 
   addProduct(product: any): Observable<any> {

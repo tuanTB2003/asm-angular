@@ -14,10 +14,12 @@ export class HomeComponent implements OnInit{
 
   ngOnInit() {
     this.getProducts();
+    console.log(this.products);
+    
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(
+    this.productService.getAll().subscribe(
       products => this.products = products.datas,
       // data => console.log(data),
       

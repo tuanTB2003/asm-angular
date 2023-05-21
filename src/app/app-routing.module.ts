@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundError } from 'rxjs';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
  // Ứng dụng phía máy chủ: (admin)
@@ -25,7 +26,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'CategoryComponent', component: CategoryComponent },
+      { path: 'product/:id', component: ProductDetailComponent },
       // {
       //   path: 'login',
       //   component: LoginComponent,
