@@ -1,5 +1,6 @@
 import { Component  , OnInit} from '@angular/core';
 import { ProductServiceService } from 'src/app/API/Products/product-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +11,18 @@ export class HomeComponent implements OnInit{
   // title = 'Home-page';
   products: any[] | undefined;
 
-  constructor(private productService: ProductServiceService) { }
+  constructor(
+    private productService: ProductServiceService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.getProducts();
-    console.log(this.products);
+    // console.log(this.products);
     
   }
+
+
 
   getProducts(): void {
     this.productService.getAll().subscribe(
@@ -46,6 +52,11 @@ export class HomeComponent implements OnInit{
       data => console.log(data),
       error => console.log(error)
     );
+  }
+
+  navigateToDetail(productId: string){
+    console.log(productId);
+    this.router.navigate(['/product/', productId]);
   }
 
   public toggleDesc(event: any): void {

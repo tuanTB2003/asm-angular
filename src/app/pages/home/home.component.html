@@ -9,6 +9,8 @@
           <p class="card-text">categoryId: {{ product.categoryId.name }}</p>
           <p class="card-text btn-desc d-none">{{ product.description }}</p>
           <button class="btn btn-primary" (click)="toggleDesc($event)">Show Description</button>
+          <button class="btn btn-primary" (click)="navigateToDetail(product._id)">Detail</button>
+          <!-- <a routerLink="" (click)="navigateToDetail(product.id)" ></a> -->
         </div>
       </div>
     </div>
