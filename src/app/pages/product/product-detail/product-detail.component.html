@@ -1,0 +1,46 @@
+<div *ngFor="let product of products">
+  <div class="detail__content" >
+    <div class="content__left">
+      <div class="img">
+        <img width="90%" [src]="product.image" alt="">
+      </div>
+    </div>
+
+    <div class="content__right">
+      <div class="info">
+        <h1>{{product?.name}}</h1>
+        <div>
+          <span>Stocking</span>
+        </div>
+      </div>
+      <div class="price">
+        <p>{{product?.price}}$</p>
+      </div>
+      <div class="color">
+        <p>Color (<em>Incomplete</em>)</p>
+        <button>
+          <img [src]="product.image" />
+        </button>
+      </div>
+      <div class="size">
+        <p>Size (<em>Incomplete</em>)</p>
+        <span>M</span>
+        <span>X</span>
+        <span>XL</span>
+      </div>
+      <div class="quantity">
+        <p>Quatity</p>
+        <i class="pi pi-angle-left" style="font-size: 1rem"></i>
+        <input type="number" min={1} value="1" />
+        <i class="pi pi-angle-right" style="font-size: 1rem"></i>
+      </div>
+      <div class="mb-4">
+        <button class="btn btn-dark mr-1" >ADD TO CART</button>
+      </div>
+      <div class="desc">
+        <p>Description</p>
+        <span><em>{{product?.description}}</em></span>
+      </div>
+    </div>
+  </div>
+</div>

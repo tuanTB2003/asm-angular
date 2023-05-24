@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoryComponent } from './pages/category/category.component';
+// import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NotFoundError } from 'rxjs';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { NotFoundComponent } from './pages/notFound/notFound.component';
 
 const routes: Routes = [
  // Ứng dụng phía máy chủ: (admin)
@@ -25,6 +27,8 @@ const routes: Routes = [
     component: LayoutClientComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
       { path: 'home', component: HomeComponent },
       { path: 'product/:id', component: ProductDetailComponent },
       // {
@@ -37,7 +41,7 @@ const routes: Routes = [
 
   {
     path: '**',
-    component: NotFoundError,
+    component: NotFoundComponent,
   }
 ];
 

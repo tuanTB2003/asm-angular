@@ -1,0 +1,41 @@
+
+  <div class="logo">
+    <a routerLink="/">
+      <img
+        class="logo-4men"
+        src="https://nguyenhuy.website/wp-content/uploads/2021/08/Nguyen-Huy-logo.png"
+        alt="Logo CidiiShop"
+        height="64px"
+      />
+    </a>
+    
+  </div>
+  <nav class="nav">
+    <ul class="menu" id="menu">
+      <li>
+        <a routerLink="/" class="hover">
+          home page
+        </a>
+      </li>
+      <!-- {categories?.map(item => (
+        <li key={item._id}>
+          <Link to={`/category/${item._id}`}>{item.name}</Link>
+        </li>
+      ))} -->
+      <li>
+        <a routerLink="/contact" class="hover">
+          Contact us
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="form-inline search">
+    <input
+      type="text"
+      id="inputForm1"
+      class="form-controlCus"
+      placeholder="Search..."
+      autoComplete="off"
+    />
+    <input type="submit" class="btnCus" />
+  </div>

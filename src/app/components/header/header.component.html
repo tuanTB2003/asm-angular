@@ -1,55 +1,72 @@
-<header class="p-3 mb-3 border-bottom">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap" />
-        </svg>
-      </a>
-
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="/home" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a routerLink="/category" class="nav-link px-2 link-dark">Category</a></li>
-        <li><a routerLink="/about" class="nav-link px-2 link-dark">About</a></li>
-        <li><a routerLink="/contact" class="nav-link px-2 link-dark">Contact</a></li>
-      </ul>
-
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-      </form>
-
-      <div class="dropdown text-end">
-        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+<!-- top-bar -->
+<div class="top-bar">
+  <div class="top-bar__left">
+    <ul>
+      <li>
+        <a href="tel:0982022969">
+          <!-- <MdPermPhoneMsg /> -->
+          <span class="number-phone">
+            <b>0867.435.803</b>
+          </span>
         </a>
-        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="p-5 mt-4 text-center bg-image" style="
-      background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-      height: 400px;
-    ">
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <!-- <div class="text-white">
-          <h1 class="mb-3">Heading</h1>
-          <h4 class="mb-3">Subheading</h4>
-          <a class="btn btn-outline-light btn-lg" href="#!" role="button"
-          >Call to action</a
-          >
-        </div> -->
-        </div>
-      </div>
-    </div>
-
+      </li>
+    </ul>
   </div>
-</header>
+  <div class="top-bar__right">
+    <ul>
+      <li>
+        <a href="/login">
+          <!-- <FaUserCircle /> -->
+          <span className="Account">Account</span>
+        </a>
+      </li>
+      <li>
+        <a href="/cart">
+          <!-- <RiShoppingBag3Fill /> -->
+          <span class="Cart">Cart </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- top-menu -->
+<div class="site-header" id="main-header">
+  <div class="logo">
+    <a href="/">
+      <img
+        class="logo-4men"
+        src="https://nguyenhuy.website/wp-content/uploads/2021/08/Nguyen-Huy-logo.png"
+        alt="Logo CidiiShop"
+        height="64px"
+      />
+    </a>
+  </div>
+  <nav class="nav">
+    <ul class="menu" id="menu">
+      <li>
+        <a href="/" class="hover"> home page </a>
+      </li>
+      <!-- {categories?.map(item => (
+        <li key={item._id}>
+          <Link to={`/category/${item._id}`}>{item.name}</Link>
+        </li>
+      ))} -->
+      <li>
+        <a href="/contact" class="hover"> Contact us </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="form-inline search">
+    <input
+      type="text"
+      id="inputForm1"
+      class="form-controlCus"
+      placeholder="Search..."
+      autoComplete="off"
+    />
+    <input type="submit" class="btnCus" />
+  </div>
+</div>
+

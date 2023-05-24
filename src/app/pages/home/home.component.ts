@@ -23,6 +23,14 @@ export class HomeComponent implements OnInit{
   }
 
 
+  
+  addToCart() {
+    // Xử lý logic khi người dùng bấm nút "Add to Cart"
+
+
+  }
+
+
 
   getProducts(): void {
     this.productService.getAll().subscribe(

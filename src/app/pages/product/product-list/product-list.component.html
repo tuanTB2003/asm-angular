@@ -1,15 +1,10 @@
-<app-slide></app-slide>
-
 <div class="container">
   <div class="row" >
     <div class="col-md-4" *ngFor="let product of products">
 
-      <div *ngIf="product"></div>
-
-      <div class="product-page" (click)="navigateToDetail(product._id)">
+      <div class="product-page">
         <div class="product-page-header">
-          <!-- <button (click)="navigateToDetail(product.id)">{{ product.name }}</button> -->
-          <!-- <a href="">{{ product.name }}</a> -->
+          <h1>{{ product.title }}</h1>
           <p class="product-page-description">{{ product.name }}</p>
         </div>
         <div class="product-page-details">
@@ -21,7 +16,7 @@
             <!-- <p class="product-stock" [ngClass]="{ 'out-of-stock': !product.inStock }">
               {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
             </p> -->
-            <button class="add-to-cart-button" (click)="addToCart()">Add to Cart</button>
+            <!-- <button class="add-to-cart-button" (click)="">Add to Cart</button> -->
           </div>
         </div>
         
@@ -35,22 +30,8 @@
         </div>
       </div>
 
-      <div *ngIf="!product">
-        <p>NO DATA</p>
-      </div>
       
 
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-

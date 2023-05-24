@@ -1,0 +1,50 @@
+<div class="main-site main-childs">
+  <div class="user-wrapper">
+    <div class="user-nav">
+      <a  href="/login" class="active">
+        Sign In
+      </a>
+      <a  href="/register">Sign Up</a>
+    </div>
+    <form
+      acceptCharset="UTF-8"
+      id="formAcount"
+      (ngSubmit)="onSubmit()"    >
+      <div class="form-group">
+        <input
+          type="text"
+          placeholder="Enter email or username"
+        />
+        <!-- <Text type="danger">{errors.email?.message}</Text> -->
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
+        <!-- <Text type="danger">{errors.password?.message}</Text> -->
+      </div>
+      <!-- {/* <input type="hidden" value={0} {...register("role")} /> */} -->
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <div class="user-foot text-center">
+      <a href="../forgot-password/index.html" class="clearfix">
+        Forgot password?
+      </a>
+      <p class="clearfix">Or login with</p>
+      <li class="loginFb">
+        <span>
+          <!-- <FaFacebookF /> -->
+        </span>
+        <a href="#">Login Facebook</a>
+      </li>
+      <li class="loginGg">
+        <span>
+          <!-- <FcGoogle /> -->
+        </span>
+        <a href="#">Login Google</a>
+      </li>
+    </div>
+  </div>
+</div>
