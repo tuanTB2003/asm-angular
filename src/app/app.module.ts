@@ -21,8 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CategoryComponent } from './pages/category/category.component';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { LayoutClientComponent } from './layouts/layout-client/layout-client.component';
-import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
-import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
+// import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+// import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
 import { TopbarComponent } from './components/user/topbar/topbar.component';
@@ -31,6 +31,9 @@ import { MenuComponent } from './components/user/menu/menu.component';
 import { SlideComponent } from './components/user/slide/slide.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { CartComponent } from './pages/cart/cart.component';
+
+// sweetalert 
 
 @NgModule({
   declarations: [
@@ -46,8 +49,7 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     TopmenuComponent,
     MenuComponent,
     // Admin
-    HeaderAdminComponent,
-    FooterAdminComponent,
+   
 
     // Pagas
     HomeComponent,
@@ -55,6 +57,7 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     ProductDetailComponent,
     LoginComponent,
     RegisterComponent,
+    CartComponent
     
 
     
@@ -72,6 +75,7 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     TableModule,
     RouterModule,
     ReactiveFormsModule,
+    
     
 
   ],

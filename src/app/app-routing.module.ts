@@ -8,6 +8,7 @@ import { ProductDetailComponent } from './pages/product/product-detail/product-d
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { NotFoundComponent } from './pages/notFound/notFound.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
  // Ứng dụng phía máy chủ: (admin)
@@ -31,6 +32,7 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: 'home', component: HomeComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'cart', component: CartComponent },
       // {
       //   path: 'login',
       //   component: LoginComponent,
