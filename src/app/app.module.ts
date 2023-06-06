@@ -106,10 +106,10 @@ import { InputNumber, InputNumberModule } from 'primeng/inputnumber';
     InputTextModule,
     DropdownModule,
     MenuModule,
-    // ChartModule,
+    ChartModule,
     AppLayoutModule,
     InputNumberModule,
-
+    
     
     
 
