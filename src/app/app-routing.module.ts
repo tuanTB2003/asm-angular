@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'admin',
     component: AppLayoutComponent,
     children: [
-      { path: '', redirectTo: 'dasboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {path: "dashboard", component: DasboardComponent},
       {path: "managementProduct", component: ManaProductComponent},
       {path: "managementCategories", component: ManaCategoriesComponent},

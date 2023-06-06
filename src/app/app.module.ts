@@ -49,6 +49,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { MenuModule } from 'primeng/menu';
 import { ChartModule } from 'primeng/chart';
 import { AppLayoutModule } from './layouts/layout/app.layout.module';
+import { InputNumber, InputNumberModule } from 'primeng/inputnumber';
+
 
 
 
@@ -106,6 +108,8 @@ import { AppLayoutModule } from './layouts/layout/app.layout.module';
     MenuModule,
     // ChartModule,
     AppLayoutModule,
+    InputNumberModule,
+
     
     
 

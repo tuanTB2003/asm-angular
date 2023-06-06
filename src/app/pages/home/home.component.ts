@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { CartService } from 'src/app/API/Cart/cart.service';
 import { DataService } from 'src/app/API/data/data.service';
+import { SelectItem } from 'primeng/api';
+import { DataView } from 'primeng/dataview';
 
 
 @Component({
@@ -14,11 +16,22 @@ import { DataService } from 'src/app/API/data/data.service';
 export class HomeComponent implements OnInit{
   // title = 'Home-page';
   products : any[] | undefined;
+  sortOptions: SelectItem[] = [];
+
+  sortOrder: number = 0;
+
+  sortField: string = '';
+
+  sourceCities: any[] = [];
+
+  targetCities: any[] = [];
+
+  orderCities: any[] = [];
+  categories:any=[]
   // carts : any = this.cartService.GetCart();
 
   carts : any = this.cartService.GetCart();
 
-  // console.log(carts);
 
   constructor(
     private productService: ProductServiceService,
@@ -93,33 +106,29 @@ export class HomeComponent implements OnInit{
     );
   }
 
-  addProduct(product: any): void {
-    this.productService.addProduct(product).subscribe(
-      data => console.log(data),
-      error => console.log(error)
-    );
-  }
-
-  updateProduct(product: any): void {
-    this.productService.updateProduct(product).subscribe(
-      data => console.log(data),
-      error => console.log(error)
-    );
-  }
-
-  deleteUser(productId: number): void {
-    this.productService.deleteUser(productId).subscribe(
-      data => console.log(data),
-      error => console.log(error)
-    );
-  }
+ 
 
   navigateToDetail(productId: string){
     // console.log(productId);
     this.router.navigate(['/product/', productId]);
   }
 
-//   public toggleDesc(event: any): void {
-//     event.target.parentElement.querySelector('.btn-desc').classList.toggle('d-none');
-// }
+
+  onSortChange(event: any) {
+    const value = event.value;
+
+    if (value.indexOf('!') === 0) {
+        this.sortOrder = -1;
+        this.sortField = value.substring(1, value.length);
+    } else {
+        this.sortOrder = 1;
+        this.sortField = value;
+    }
+}
+
+onFilter(dv: DataView, event: Event) {
+    dv.filter((event.target as HTMLInputElement).value);
+}
+
+
 }

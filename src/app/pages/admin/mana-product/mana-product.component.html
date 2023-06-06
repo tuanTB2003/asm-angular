@@ -16,41 +16,53 @@
 
 <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" class="p-fluid">
            <ng-template pTemplate="content">
-            <img [src]=" products.image" [alt]="products.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="products.image">
+            <img [src]=" product.image" [alt]="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
 
                 <div class="field">
                     <label for="name">Name</label>
-                    <input type="text" pInputText id="name" [(ngModel)]="products.name" >
+                    <input type="text" pInputText id="name" [(ngModel)]="product.name" >
                 </div>
                 <div class="field">
                     <label for="description">Description</label>
-                    <textarea id="description" pInputText id="name" [(ngModel)]="products.description"></textarea>
+                    <textarea id="description" pInputText id="name" [(ngModel)]="product.description"></textarea>
                 </div>
                 <div class="field">
                     <label for="image">Image</label>
                     <input type="file" id="image" pInputText id="name" >    
-                    <!-- <img [src]="products.image" [alt]="products.name" width="100" class="shadow-4" /> -->
+                    <!-- <img [src]="product.image" [alt]="product.name" width="100" class="shadow-4" /> -->
 
                 </div>
                 <div class="field">
                     <label for="">category</label>
-                        <p-dropdown [options]="categories" [(ngModel)]="categories" placeholder="select" optionLabel="name" inputId="float-label"   ></p-dropdown>                  
+                        <!-- <p-dropdown [options]="categories" [(ngModel)]="categories" placeholder="select" optionLabel="name" inputId="float-label"   ></p-dropdown>                   -->
                 </div>
                 <div class="formgrid grid">
                     <div class="field col">
                         <label for="price">Price</label>
-                      <p-inputNumber id="price" [(ngModel)]="products.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
+                      <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
                     </div>
-                    <div class="field col">
+                    <!-- <div class="field col">
                         <label for="quantity">Quantity</label>
-                        <p-inputNumber id="quantity" [(ngModel)]="products.price"></p-inputNumber>
-                    </div>
+                        <p-inputNumber id="quantity" [(ngModel)]="product.price"></p-inputNumber>
+                    </div> -->
                 </div>
            </ng-template>
            <ng-template pTemplate="footer">
-            <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" ></button>
-            <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" ></button>
+            <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+            <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
         </ng-template>
+
+</p-dialog>
+
+<p-dialog [(visible)]="deleteProductDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+    <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+        <span *ngIf="product">Are you sure you want to delete <b>{{product.name}}</b>?</span>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteProductDialog = false"></button>
+        <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes" (click)="confirmDelete()"></button>
+    </ng-template>
 </p-dialog>
 
 <div class="card">
@@ -89,7 +101,7 @@
                 <td>
                     <div class="flex gap-3">
                         <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editProduct(product)" ></button>
-                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </div>
                 </td>
             </tr>

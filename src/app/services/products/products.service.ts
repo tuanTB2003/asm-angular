@@ -6,7 +6,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = '  http://localhost:8080/api/products'
+  private apiUrl = 'http://localhost:8080/api/products'
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any> {
@@ -22,13 +22,15 @@ export class ProductsService {
     return this.http.post<any>(this.apiUrl, product);
   }
 
-  updateProduct(id: string, product: any): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+  updateProduct(product: any): Observable<any> {
+    const url = `${this.apiUrl}/${product._id}`;
     return this.http.put<any>(url, product);
   }
 
   deleteProduct(id: string ): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<any>(url);
+    // const url = `${this.apiUrl}/${id}`;
+    console.log(`${this.apiUrl}/${id}`);
+    
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }
